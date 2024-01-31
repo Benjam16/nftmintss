@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>呂工卞丹尺回　山回尺し句</title>
+        <meta name="description" content="呂工卞丹尺回　山回尺し句" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll intro" style="color: black;" href="#page-top">Gitaro World </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a target="_blank" href="https://opensea.io/collection/">Opensea</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://twitter.com/">Twitter</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://evm.explorer.canto.io/address/0xa46913249c71D58BEb9784225D53438F54C22337/contracts">Canto Explorer</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div id="prepare">
+                        <button type="button" name="button" class="btn btn-default btn-lg" id="btn-connect">Connect Wallet</button>
+                    </div>
+                    <div id="connected" style="display: none;">
+                        <button type="button" name="button" class="btn btn-default btn-lg" id="btn-disconnect">
+                            Disconnect wallet
+                        </button>
+                        <div id="network" style="display: none;">
+                            <p><strong>Connected blockchain:</strong> <span id="network-name"></span></p>
+                            <p><strong>Selected account:</strong> <span id="selected-account"></span></p>
+                        </div>
+                        <table class="table table-listing" style="display: none;">
+                            <tbody id="accounts"></tbody>
+                        </table>
+                    </div>
+                    <div class="ms-4 rsp-toggler d-inline-block d-md-inline-block d-lg-none">
+                        <i class="fa-solid fa-bars fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <header class="intro">
+            <div class="intro-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <img src="img/logo.png" class="img-rounded img-responsive center-block" style="width: 50%; height: auto;" alt="Responsive image" /><br />
+                            <br />
+                            <img id="preview" src="img/p3p3y00ts.gif" class="img-rounded img-responsive center-block" style="width: 50%; height: auto;" alt="Responsive image" /><br />
+                            <br />
+                            <p class="intro-text">ムﾉｲﾑ尺の　ᄃんﾑｱｲ乇尺　の刀乇 !</p>
+                            <h2>卞廾ヨ　勹凵几呂しヨ　回乍　句ヨ丹卞廾</h2>
+                            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Mint Gitaro!</button>
+                            <!--<button type="button" name="button" class="btn btn-default btn-lg" id="mint-nft">Mint Gitaro!</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="about" class="container text-center">
+            <div class="container">
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="text-primary modal-title text-center">M I N T Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-primary text-center">20/Per Tx</p>
+                                <p class="text-primary text-center">1000 PLS / Gitaro</p>
+                                <p class="text-primary text-center" id="minted">7777 Gitaro</p>
+                                <div class="center">
+                                    <div class="input-group mr-1">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="quant[1]" id="quantity" class="form-control input-number text-center" value="20" min="1" max="20" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <br />
+                                    <div class="text-center">
+                                        <!--<button onclick="mint()" id="mintButton" class="">Mint Gitaro!</button>-->
+                                        <button type="button" name="button" class="btn btn-default btn-lg h-25" id="mint-nft">Mint Gitaro!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.0/web3.min.js"></script>
+        <script src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+        <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+        <script src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/nftconstant.js"></script>
+        <script src="js/nft.js"></script>
+    </body>
+</html>
